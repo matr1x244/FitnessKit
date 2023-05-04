@@ -3,34 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container_rv_item_list_training"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_date_calendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="date_calendar"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/gray"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@+id/cardView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_date_calendar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <View
                 android:id="@+id/view_color"
                 android:layout_width="10dp"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:background="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -40,68 +44,91 @@
                 android:id="@+id/tv_start_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
                 android:text="start_time"
-                android:textSize="15sp"
-                app:layout_constraintStart_toEndOf="@+id/view"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/tv_end_time"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_end_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="end_time"
-                android:textSize="15sp"
-                app:layout_constraintStart_toEndOf="@+id/view"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_start_time"
                 app:layout_constraintTop_toBottomOf="@+id/tv_start_time" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_name_training"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
                 android:text="name_training"
-                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_start_time"
                 app:layout_constraintStart_toEndOf="@+id/tv_start_time"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/tv_start_time" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_name_trainer"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
                 android:src="@android:drawable/ic_menu_myplaces"
-                app:layout_constraintStart_toEndOf="@+id/tv_start_time"
-                app:layout_constraintTop_toBottomOf="@+id/tv_name_training" />
+                app:layout_constraintBottom_toBottomOf="@+id/tv_end_time"
+                app:layout_constraintStart_toStartOf="@+id/tv_name_training"
+                app:layout_constraintTop_toTopOf="@+id/tv_end_time" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_name_trainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:text="name_trainer"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_name_trainer"
                 app:layout_constraintStart_toEndOf="@+id/iv_name_trainer"
                 app:layout_constraintTop_toTopOf="@+id/iv_name_trainer" />
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_center_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="176dp" />
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_geo"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="30dp"
                 android:src="@android:drawable/ic_menu_mylocation"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_name_trainer"
-                app:layout_constraintStart_toEndOf="@+id/tv_name_trainer" />
+                app:layout_constraintStart_toEndOf="@+id/guideline_center_card"
+                app:layout_constraintTop_toTopOf="@+id/tv_name_trainer" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_geo"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:text="geo"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_geo"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iv_geo"
                 app:layout_constraintTop_toTopOf="@+id/iv_geo" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

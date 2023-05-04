@@ -1,21 +1,21 @@
 package com.example.fitnesskit.ui.main
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fitnesskit.databinding.FragmentMainBinding
 import com.example.fitnesskit.ui.main.rv_training.AdapterTrainingRV
+import com.example.fitnesskit.viewmodels.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.qualifier.named
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-import java.util.Locale
 
-class MainFragment() : Fragment() {
+class MainFragment : Fragment() {
 
     companion object {
         fun newInstance() = MainFragment()
@@ -30,7 +30,7 @@ class MainFragment() : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -47,11 +47,26 @@ class MainFragment() : Fragment() {
         binding.rvViewListTraining.layoutManager =
             LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
         binding.rvViewListTraining.adapter = adapterTraining
+        progressBar()
+    }
+
+    private fun progressBar() {
+        viewModel.inProgress.observe(viewLifecycleOwner) { inProgress ->
+            animationListLesson()
+            binding.rvViewListTraining.isVisible = !inProgress
+            binding.progressBar.isVisible = inProgress
+        }
+    }
+
+    private fun animationListLesson() {
+        ObjectAnimator.ofFloat(binding.rvViewListTraining, View.ALPHA, 0.1f, 1.0f)
+            .setDuration(1000)
+            .start()
     }
 
     private fun loadNewTraining() {
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            viewModel.repos.collect() {
+            viewModel.reposListTraining.collect {
                 adapterTraining.setData(it.lessons, it.trainers)
             }
         }

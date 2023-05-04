@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/training_menu"
+        android:title="@string/menu_lessons_item"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:enabled="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/like_menu"
+        android:title="@string/menu_work_item"
+        android:icon="@android:drawable/ic_menu_today"
+        android:enabled="true"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/add_menu"
+        android:title="@string/menu_add_item"
+        android:icon="@android:drawable/ic_menu_add"
+        android:enabled="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/chat_menu"
+        android:title="@string/menu_chat_item"
+        android:icon="@android:drawable/sym_action_chat"
+        android:enabled="true"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/still_menu"
+        android:title="@string/menu_still_item"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:enabled="true"
+        app:showAsAction="always" />
+</menu>

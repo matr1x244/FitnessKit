@@ -7,21 +7,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fitnesskit.R
 import com.example.fitnesskit.domain.model.Lesson
 import com.example.fitnesskit.domain.model.Trainer
-import kotlinx.coroutines.flow.combine
 
 class AdapterTrainingRV() : RecyclerView.Adapter<TrainingViewHolder>() {
 
     private var trainingList: MutableList<Lesson> = mutableListOf()
     private var trainerList: MutableList<Trainer> = mutableListOf()
 
-
     @SuppressLint("NotifyDataSetChanged")
     fun setData(newListTraining: List<Lesson>, newListTrainer: List<Trainer>) {
-        // по идее надо объеденить 2 списка в один и засетить.
         trainingList.clear()
         trainingList.addAll(newListTraining)
         trainerList.addAll(newListTrainer)
-        trainingList.sortBy { it.date}
+        trainingList.sortBy { it.date }
         notifyDataSetChanged()
     }
 
