@@ -1,6 +1,6 @@
 package com.example.fitnesskit.data.web
 
-import com.example.fitnesskit.domain.model.TrainingModel
+import com.example.fitnesskit.domain.data.TrainingModel
 import retrofit2.http.GET
 
 interface TrainingAPI {

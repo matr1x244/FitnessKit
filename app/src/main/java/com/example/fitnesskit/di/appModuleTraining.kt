@@ -2,7 +2,7 @@ package com.example.fitnesskit.domain
 
 import com.example.fitnesskit.data.web.RetrofitRequestImpl
 import com.example.fitnesskit.data.web.TrainingAPI
-import com.example.fitnesskit.viewmodels.MainViewModel
+import com.example.fitnesskit.ui.main.MainViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module

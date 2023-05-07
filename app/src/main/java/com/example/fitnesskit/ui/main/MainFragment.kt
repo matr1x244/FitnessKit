@@ -11,7 +11,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fitnesskit.databinding.FragmentMainBinding
 import com.example.fitnesskit.ui.main.rv_training.AdapterTrainingRV
-import com.example.fitnesskit.viewmodels.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.qualifier.named
 

@@ -1,4 +1,4 @@
-package com.example.fitnesskit.viewmodels
+package com.example.fitnesskit.ui.main
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.fitnesskit.domain.RepositoryTraining
-import com.example.fitnesskit.domain.model.TrainingModel
+import com.example.fitnesskit.domain.data.TrainingModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel

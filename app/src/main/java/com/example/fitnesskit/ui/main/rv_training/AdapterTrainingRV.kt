@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitnesskit.R
-import com.example.fitnesskit.domain.model.Lesson
-import com.example.fitnesskit.domain.model.Trainer
+import com.example.fitnesskit.domain.data.Lesson
+import com.example.fitnesskit.domain.data.Trainer
 
 class AdapterTrainingRV() : RecyclerView.Adapter<TrainingViewHolder>() {
 

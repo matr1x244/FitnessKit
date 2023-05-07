@@ -1,4 +1,4 @@
-package com.example.fitnesskit.domain.model
+package com.example.fitnesskit.domain.data
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

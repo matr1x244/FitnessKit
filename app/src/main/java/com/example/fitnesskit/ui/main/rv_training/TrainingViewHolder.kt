@@ -4,8 +4,8 @@ import android.graphics.Color
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitnesskit.databinding.RvItemListTrainingBinding
-import com.example.fitnesskit.domain.model.Lesson
-import com.example.fitnesskit.domain.model.Trainer
+import com.example.fitnesskit.domain.data.Lesson
+import com.example.fitnesskit.domain.data.Trainer
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.Locale
